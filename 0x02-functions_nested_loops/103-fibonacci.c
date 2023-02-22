@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
  * main - Prints the sum of even fibonacci numbers
- * Return: Nothing!
  * less than 4000000.
+ * Return: Nothing!
  */
 int main(void)
 
@@ -20,3 +20,4 @@ j = k - j;
 }
 printf("%ld\n", sum);
 return (0);
+}
