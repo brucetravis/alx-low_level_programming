@@ -2,17 +2,16 @@
 #include <stdio.h>
 
 /**
- * main - check the code.
+ * main - Test function for positive or negative
  *
  * Return: Always 0.
  */
 int main(void)
 {
-char c;
+int i;
 
-c = 'A';
-printf("%c: %d\n", c, _isupper(c));
-c = 'a';
-printf("%c: %d\n", c, _isupper(c));
+i = 0;
+positive_or_negative(i);
+
 return (0);
 }
