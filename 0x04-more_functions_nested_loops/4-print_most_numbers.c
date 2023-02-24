@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_most_numbers - print numbers from 0 up to 10
+ * print_most_numbers - print numbers since 0 up to 10
  * Description: print the numbers from 0 to 9
- * Return: The numbers form 0 up to 9
+ * Return: The numbers since 0 up to 9
  */
 
 void print_most_numbers(void)
