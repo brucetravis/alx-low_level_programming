@@ -1,26 +1,27 @@
-#include<stdio.h>
-#include<string.h>
+#include "main.h"
 
 /**
- * main - Entry point
- * __strncpy - Copying a string
- * Description: _strncpy function that copies a string
- * @parameter: character(*dest, *src) int(n)
+ * _strncpy - Copies at most an imputted number
+ * of bytes from string src into dest.
+ * @dest: The buffer storing the string copy.
+ * @src: The source string
+ * @n: The maximum number of bytes to copied from src
+ * Return: A pointer to the resulting string dest.
  *
- * Return: Always 0 (Success)
  */
 
-int main(void)
-
-char *_strncpy(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n)
 {
-int n;
+int index = 0, src_len = 0;
 
-char *src[] = "My string to copy!";
-char *dest[50];
+while (src[index++])
+src_len++;
 
-strcpy(*dest, *src);
-printf("*dest:%s\n", *dest);
+for (index = 0; src[index] && index < n; index++)
+dest[index] = src[index];
 
-return (0);
+for (index = src_len; index < n; index++)
+dest[index] = '\0';
+
+return (dest);
 }
