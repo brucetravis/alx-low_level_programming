@@ -13,10 +13,10 @@ int i, n;
 
 for (i = 0; s[1] != '\0'; i++)
 {
-for (n = 0; accept[n] != '\0'; i++)
+for (n = 0; accept[n] != '\0'; n++)
 {
 if (s[i] == accept[n])
-return (s + 1);
+return (s + i);
 }
 }
 return (NULL);
