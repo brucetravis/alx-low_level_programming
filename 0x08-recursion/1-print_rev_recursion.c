@@ -2,20 +2,20 @@
 
 /**
  * _print_rev_recursion - Prints a string in reverse
- * @s - String to be printed in reverse
+ * @s: the string to reverse
  *
- * RETURN: Always 0 (success)
+ * RETURN: NOTHING.
  */
-
-void _print_rev_recursion(char *s);
-{
-char s[] = "I love my code";
-
-return (0);
-}
 
 void _print_rev_recursion(char *s)
 {
-_print_rev_recursion(s + 1);
-putchar("%s", *s);
+if (*s == '\0')
+{	
+return;
+}
+
+s++;
+_print_rev_recursion(s);
+s--;
+_putchar(*s);
 }
