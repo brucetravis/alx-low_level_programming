@@ -5,7 +5,7 @@
  * @x: the number to be multiplied
  * @y: the number of times to multiply the  the value
  *
- * RETURN: -1 if y is lower than 0
+ * Return: - the value multiplied by y terms
  */
 
 int _pow_recursion(int x, int y)
