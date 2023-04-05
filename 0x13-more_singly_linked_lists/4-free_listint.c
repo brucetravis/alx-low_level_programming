@@ -1,21 +1,21 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * free_listint - function that frees a listint_t list.
+ * free_listint - frees a listint_t list
  *
  * @head: listint_t list to be freed
  */
 
 void free_listint(listint_t *head)
 {
-listint_t *current = head;
-listint_t *next;
+listint_t *temp;
 
-while (current != NULL)
+while (head != NULL)
 {
-next = current->next;
-free(current);
-current = next;
+temp = head;
+head = head->next;
+
+free(temp);
 }
 }
