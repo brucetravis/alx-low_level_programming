@@ -14,18 +14,24 @@ unsigned int result = 0;
 int i;
 
 if (b == NULL)
-return (0);
-
-for (i = 0; b[i] != '\0'; b++)
 {
-if (b[i] != '0' && b[i] != '1')
 return (0);
-
-result <<= 1;
-
-if (b[i] == '1')
-result += 1;
 }
 
+for (i = 0; b[i] != '\0'; i++)
+{
+if (b[i] == '0')
+{
+result = result * 2;
+}
+else if (b[i] == '1')
+{
+result = result * 2 + 1;
+}
+else
+{
+return (0);
+}
+}
 return (result);
 }
