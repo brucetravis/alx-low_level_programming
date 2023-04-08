@@ -7,8 +7,15 @@
  */
 int get_endianness(void)
 {
-unsigned int x = 1;
-char *c = (char *) &x;
+unsigned int num = 1;
+char *ptr = (char *)&num;
 
-return (*c);
+if (*ptr == 1)
+{
+return (1);
+}
+else
+{
+return (0);
+}
 }
