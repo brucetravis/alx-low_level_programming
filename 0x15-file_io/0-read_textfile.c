@@ -15,41 +15,13 @@ char *buf;
 ssize_t fd;
 ssize_t t;
 ssize_t w = 0;
-ssize_t i;
 
 fd = open(filename, O_RDONLY);
 if (fd == -1)
 return (0);
-
-fd = open(filename, O_RDONLY);
-if (fd == -1)
-return (0);
-
 buf = malloc(sizeof(char) * letters);
-if (buf == NULL)
-{
-close(fd);
-return (0);
-}
-
 t = read(fd, buf, letters);
-if (t == -1)
-{
-free(buf);
-close(fd);
-return (0);
-}
-
-for (i = 0; i < t; i++)
-{
-if (putchar(buf[i]) == EOF)
-{
-free(buf);
-close(fd);
-return (0);
-}
-w++;
-}
+w = write(STDOUT_FILENO, buf, t);
 
 free(buf);
 close(fd);
