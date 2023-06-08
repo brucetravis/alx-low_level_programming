@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
+#include <stdlib.h>
 
 /**
- * factorial -  returns the factorial of a given number.
+ * factorial - returns the factorial of a given number.
  * @n: factorial of number to return from.
  *
  * Return: factorial of n.
