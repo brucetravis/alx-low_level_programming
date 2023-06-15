@@ -1,54 +1,44 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * array_range - creates an array of integers
- * @min: the minimum value (inclusive)
- * @max: the maximum value (inclusive)
+ * _realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer to the memory previously allocated with malloc
+ * @old_size: size, in bytes, of the allocated space for ptr
+ * @new_size: new size, in bytes, of the new memory block
  *
- * Return: pointer to the newly created array
+ * Return: pointer to the reallocated memory block
  */
-int *array_range(int min, int max)
+
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-int *array;
-int size, i;
+char *new_ptr;
+unsigned int i;
 
-if (min > max)
+if (new_size == old_size)
+return (ptr);
+
+if (ptr == NULL)
+{
+new_ptr = malloc(new_size);
+if (new_ptr == NULL)
 return (NULL);
-
-size = max - min + 1;
-array = malloc(size * sizeof(int));
-
-if (array == NULL)
-return (NULL);
-
-for (i = 0; i < size; i++)
-array[i] = min++;
-
-return (array);
+return (new_ptr);
 }
 
-/**
- * main - example usage of the array_range function
- *
- * Return: Always 0
- */
-int main(void)
+if (new_size == 0)
 {
-int *arr, i;
-int min = 0, max = 10;
-
-arr = array_range(min, max);
-if (arr == NULL)
-{
-printf("Failed to create array\n");
-return (1);
+free(ptr);
+return (NULL);
 }
 
-for (i = 0; i <= max - min; i++)
-printf("%d ", arr[i]);
+new_ptr = malloc(new_size);
+if (new_ptr == NULL)
+return (NULL);
 
-free(arr);
+for (i = 0; i < old_size && i < new_size; i++)
+new_ptr[i] = ((char *)ptr)[i];
 
-return (0);
+free(ptr);
+return (new_ptr);
 }
