@@ -24,6 +24,8 @@ if (result == NULL)
 return (NULL);
 }
 
+result[0] = '\0';
+
 if (s1 != NULL)
 {
 strcpy(result, s1);
