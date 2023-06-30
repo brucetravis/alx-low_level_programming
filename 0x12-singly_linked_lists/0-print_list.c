@@ -13,20 +13,20 @@ size_t count = 0;
 
 while (h != NULL)
 {
-if (h->value == 0)
+if (h->str == NULL)
 {
 printf("[0] (nil)\n");
 }
 else
 {
-printf("[%d] %d\n", h->value, h->value);
+printf("[%u] %s\n", h->len, h->str);
 }
 
 h = h->next;
 count++;
 }
 
-printf("-> %lu element %s", count, (count != 1) ? "s" : " ");
+printf("-> %lu element%s\n", count, (count != 1) ? "s" : " ");
 
 return (count);
 }
