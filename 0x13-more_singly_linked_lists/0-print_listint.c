@@ -19,7 +19,5 @@ h = h->next;
 count++;
 }
 
-printf("-> %lu elements%s\n", count, (count != 1) ? "s" : " ");
-
 return (count);
 }
