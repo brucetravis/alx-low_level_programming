@@ -10,13 +10,14 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+int fd;
+ssize_t bytesRead, bytesWritten;
+char *buffer;
+
 if (filename == NULL)
 {
 return (0);
 }
-	
-int fd;
-ssize_t bytesRead, bytesWritten;
 
 fd = open(filename, O_RDONLY);
 if (fd == -1)
@@ -24,7 +25,7 @@ if (fd == -1)
 return (0);
 }
 
-char *buffer = (char *)malloc(letters + 1);
+buffer = (char *)malloc(letters + 1);
 if (buffer == NULL)
 {
 close(fd);
