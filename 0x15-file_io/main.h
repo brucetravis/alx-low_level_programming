@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <elf.h>
+#include <string.h>
 
 void print_error(const char *message);
 int main(int argc, char **argv);
