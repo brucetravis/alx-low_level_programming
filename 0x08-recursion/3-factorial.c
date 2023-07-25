@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * factorial - returns the factorial of a given number.
@@ -22,12 +21,6 @@ return (1);
 }
 else
 {
-int result = 1;
-int i;
-for (i = 1; i <= n; ++i)
-{
-result *=  i;
-}
-return (result);
+return (n * factorial (n - 1));
 }
 }
