@@ -1,7 +1,16 @@
 #include <stdio.h>
 #include "main.h"
 
-int actual_sqrt_recursion(int n, int i);
+/**
+ * _sqrt_helper - Helper function to find the square root recursively.
+ * @n: number to find the square root of.
+ * @start: starting point of the binary search.
+ * @end: ending point of the binary search.
+ *
+ * Return: natural square root of n or -1 if it does not have one.
+ */
+int _sqrt_helper(int n, int start, int end);
+
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: number to calculate the square root of
@@ -20,27 +29,39 @@ return (n);
 }
 else
 {
-int start = 1;
-int end = n / 2;
-int result = -1;
+return (_sqrt_helper(n, 1, n));
+}
+}
 
-while (start <= end)
+/**
+ * _sqrt_helper - Helper function to find the square root recursively.
+ * @n: number to find the square root of.
+ * @start: starting point of the binary search.
+ * @end: ending point of the binary search.
+ *
+ * Return: natural square root of n or -1 if it does not have one.
+ */
+int _sqrt_helper(int n, int start, int end)
 {
 int mid = (start + end) / 2;
-if (mid * mid == n)
+
+if (start <= end)
+{
+int square = mid * mid;
+
+if (square == n)
 {
 return (mid);
 }
-else if (mid * mid < n)
+else if (square > n)
 {
-start = mid + 1;
-result = mid;
+return (_sqrt_helper(n, start, mid - 1));
 }
 else
 {
-end = mid - 1;
+return (_sqrt_helper(n, mid + 1, end));
 }
 }
-return (result);
-}
+
+return (-1);
 }
