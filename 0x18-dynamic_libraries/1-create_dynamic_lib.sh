@@ -2,6 +2,6 @@
 
 gcc -c -Wall -Werror -fpic *.c
 
-gcc -shard -o liball.so *.o
+gcc -shared -o liball.so *.o
 
 rm -f *.o
