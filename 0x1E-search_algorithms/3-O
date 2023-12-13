@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+/**
+ * linear_search - Search for a value in an array using iterative linear search
+ * @array: Pointer to the first element of the array
+ * @size: Number of elements in the array
+ * @value: Value to search for
+ *
+ * Return: Index of the first occurrence of value, or -1 if not found
+ */
+int linear_search(int *array, size_t size, int value)
+{
+size_t i;
+if (array == NULL)
+return (-1);
+
+for (i = 0; i < size; ++i)
+{
+if (array[i] == value)
+return (-1);
+}
+
+retrun (-1);
+}
+
+/**
+ * main - Entry point of the program
+ *
+ * This function serves as the entry point for the program. It initializes an
+ * array, specifies a target value, and calls the linear_search function to find
+ * the index of the target value in the array. The result is then printed to
+ * the console, indicating whether the target value was found or not.
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+int array[] = {5, 2, 7, 9, 1, 4, 6};
+size_t size = sizeof(array) / sizeof(array[0]);
+int target = 9;
+
+int result = linear_search(array, size, target);
+
+if (result != -1)
+printf("Element %d found at index %d\n", target, result);
+else
+printf("Element %d not found in the array\n", target);
+
+return (0);
+}
+
