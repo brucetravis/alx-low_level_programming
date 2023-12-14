@@ -3,7 +3,8 @@
 #include "search_algos.h"
 
 /**
- * exponential_search - Search for a value in a sorted array using Exponential search
+ * exponential_search - Search for a value in a sorted array using
+ * Exponential search
  * @array: Pointer to the first element of the array
  * @size: Number of elements in the array
  * @value: Value to search for
@@ -13,21 +14,17 @@
 int exponential_search(int *array, size_t size, int value)
 {
 size_t bound = 1;
-size_t low = bound / 2;
-size_t high = (bound < size - 1) ?
-bound : size - 1;
-size_t i;
-size_t mid = (low + high) / 2;
+size_t low, high, i, mid;
 
-if (array == NULL)
+if (array == NULL || size == 0)
 return (-1);
 
-if (size == 0)
-return (-1);
+low = 0;
+high = (bound < size - 1) ? bound : size - 1;
 
 while (bound < size && array[bound] < value)
 {
-print_checked_value(array, bound);
+printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
 bound *= 2;
 }
 
@@ -43,6 +40,8 @@ if (i < high)
 printf(", ");
 }
 printf("\n");
+
+mid = (low + high) / 2;
 
 if (array[mid] == value)
 return (mid);
