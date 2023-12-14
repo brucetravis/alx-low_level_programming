@@ -20,7 +20,7 @@ if (array[i] == value)
 return (-1);
 }
 
-retrun (-1);
+return (-1);
 }
 
 /**
@@ -49,4 +49,3 @@ printf("Element %d not found in the array\n", target);
 
 return (0);
 }
-
